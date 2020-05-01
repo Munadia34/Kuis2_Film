@@ -36,8 +36,7 @@ public class IntiDAO {
     }
     public void Update(IntiModel Model){
         try{
-            String query = "UPDATE data_inti SET judul = '"+Model.getJudul()+"', tipe = '"+Model.getTipe()+"', episode = '"+Model.getEpisode()+"', genre = '"+Model.getGenre()+"', status = '"+Model.getStatus()+"', rating = '"+Model.getRating()+"' WHERE judul = '"+Model.getJudul()+"'";
-            statement.executeUpdate(query);
+           String query = "INSERT INTO data_inti (judul,tipe,episode,genre,status,rating) VALUES ('"+Model.getJudul()+"','"+Model.getTipe()+"','"+Model.getEpisode()+"','"+Model.getGenre()+"','"+Model.getStatus()+"','"+Model.getRating()+"')";
             JOptionPane.showMessageDialog(null, "Berhasil Terupdate");
         } catch (SQLException sql) {
             JOptionPane.showMessageDialog(null, sql.getMessage());
